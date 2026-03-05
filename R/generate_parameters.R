@@ -177,7 +177,7 @@ generate_parameters <- function(cols = 200,
                                 MaxLAImax = 1,
                                 CustomPhenology = 0,
                                 MonthlySeedUpdate = 0,
-                                SeedBoosting = 0,
+                                SeedBoosting = 0
                                 ) {
   # check args
   if (!all(unlist(lapply(
@@ -313,7 +313,7 @@ generate_parameters <- function(cols = 200,
       "/* active le module torus (0;1) implementing a torus */", 
       "/* active le module MinLAImax (0;1) le filtrage pour la lumière se fait avant de tirer la graine, le + contraignant */",
       "/* active le module MaxLAImax (0;1) le filtrage pour la lumière se fait avant de tirer la graine, le - contraignant */",
-      "/* Activate control on seed production timing */,"
+      "/* Activate control on seed production timing */",
       "/* Update Seedbank every month in case Custom Phenology include intra-annual cycle */",
       "/* Allow to give a shade survival advantage to big seeds */"
 
