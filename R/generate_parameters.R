@@ -94,10 +94,9 @@
 #' @param torus num. active le module torus (0;1) implementing a torus
 #' @param MinLAImax num. active le module MinLAImax (0;1) le filtrage par la lumière se fait avant de tirer le graine, version la plus contraignante
 #' @param MaxLAImax num. active le module MaxLAImax (0;1) le filtrage par la lumière se fait avant de tirer le graine, version la moins contraignante
-#' @param CustomPhenology
-#' @param MonthlySeedUpdate
-#' @param SeedBoosting
-
+#' @param CustomPhenology bla. bla.
+#' @param MonthlySeedUpdate bla. bla.
+#' @param SeedBoosting bla. bla.
 #' @return A data frame of global parameters.
 #'
 #' @seealso [troll()], [stack()], [update_parameters()]

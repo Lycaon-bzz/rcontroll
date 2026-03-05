@@ -72,7 +72,10 @@ generate_parameters(
   distdisperse = 1,
   torus = 1,
   MinLAImax = 1,
-  MaxLAImax = 1
+  MaxLAImax = 1,
+  CustomPhenology = 0,
+  MonthlySeedUpdate = 0,
+  SeedBoosting = 0
 )
 }
 \arguments{
@@ -233,6 +236,12 @@ equal 0.}
 \item{MinLAImax}{num. active le module MinLAImax (0;1) le filtrage par la lumière se fait avant de tirer le graine, version la plus contraignante}
 
 \item{MaxLAImax}{num. active le module MaxLAImax (0;1) le filtrage par la lumière se fait avant de tirer le graine, version la moins contraignante}
+
+\item{CustomPhenology}{bla. bla.}
+
+\item{MonthlySeedUpdate}{bla. bla.}
+
+\item{SeedBoosting}{bla. bla.}
 }
 \value{
 A data frame of global parameters.
