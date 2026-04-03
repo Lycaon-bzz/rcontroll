@@ -3373,7 +3373,7 @@ void Tree::DisperseSeed()
       }
       if (_CustomPhenology)
       {
-        if (iter % t_seedlingCycle - t_seedlingOffset == 0)
+        if (iter % (t_seedlingCycle - t_seedlingOffset) == 0)
         {
           FillSeed(col_dispersal, row_dispersal, t_sp_lab);
         }
