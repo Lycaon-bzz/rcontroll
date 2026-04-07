@@ -3300,7 +3300,7 @@ void Tree::Death()
 //! - New v.2.1 threshold of maturity is defined as a size threshold (and not age as before), following Wright et al 2005 JTE
 void Tree::DisperseSeed()
 {
-  if (t_dbh >= t_dbhmature)
+  if (t_dbh >= t_dbhmature && _CustomPhenology)
   {
 
     if (t_site == 15)
@@ -3371,17 +3371,7 @@ void Tree::DisperseSeed()
         if (row_dispersal < 0)
           row_dispersal = row_dispersal + rows;
       }
-      if (_CustomPhenology)
-      {
-        if (iter % (t_seedlingCycle - t_seedlingOffset) == 0)
-        {
-          FillSeed(col_dispersal, row_dispersal, t_sp_lab);
-        }
-      }
-      else
-      {
-        FillSeed(col_dispersal, row_dispersal, t_sp_lab);
-      }
+      FillSeed(col_dispersal, row_dispersal, t_sp_lab);
     }
 
 #ifdef TRACK_INDIVIDUALS
