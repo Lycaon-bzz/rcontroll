@@ -3302,7 +3302,7 @@ void Tree::DisperseSeed()
 {
   if (t_dbh >= t_dbhmature && _CustomPhenology)
   {
-
+    Rcout << "Reproduction de" << S[t_sp_lab].s_name << "à" << iter << endl;
     if (t_site == 15)
       Rcout << "la masse des graines de l'arbre " << S[t_sp_lab].s_seedmass << endl; // test dev Audrey
     int nbs;
@@ -4077,7 +4077,10 @@ void trollCpp(
     std::string forest_file,
     std::string output_file)
 {
-
+  if (_CustomPhenology)
+  {
+    Rcout << "_CustomPhenology est activé";
+  }
   // From Rcpp acceptable input to TROLL char*
   bufi = &global_file[0];
   bufi_climate = &climate_file[0];
