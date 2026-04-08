@@ -4077,10 +4077,6 @@ void trollCpp(
     std::string forest_file,
     std::string output_file)
 {
-  if (_CustomPhenology)
-  {
-    Rcout << "_CustomPhenology est activé";
-  }
   // From Rcpp acceptable input to TROLL char*
   bufi = &global_file[0];
   bufi_climate = &climate_file[0];
@@ -4249,6 +4245,8 @@ void trollCpp(
     Rcout << "Activated Module: MinLAImax" << endl;
   if (_MaxLAImax == 1)
     Rcout << "Activated Module: MaxLAImax" << endl;
+  if (_CustomPhenology == 1)
+    Rcout << "Activated Module: CustomPhenology" << endl;
 
   //!*********************
   //!** Evolution loop  **
