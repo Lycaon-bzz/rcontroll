@@ -78,6 +78,9 @@ NULL
 #' )
 #' }
 #'
+
+options(error = recover)
+
 stack <- function(name = NULL, # nolint
                   simulations,
                   path = NULL,
