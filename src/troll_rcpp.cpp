@@ -3300,7 +3300,7 @@ void Tree::Death()
 //! - New v.2.1 threshold of maturity is defined as a size threshold (and not age as before), following Wright et al 2005 JTE
 void Tree::DisperseSeed()
 {
-  if (t_dbh >= t_dbhmature && _CustomPhenology)
+  if (t_dbh >= t_dbhmature)
   {
     Rcout << "Reproduction de" << S[t_sp_lab].s_name << "à" << iter << endl;
     if (t_site == 15)
@@ -6520,8 +6520,19 @@ void UpdateSeeds()
     { // disperse seeds produced by mature trees
       if (T[site].t_age)
       {
-        trees_mature++;
-        T[site].DisperseSeed();
+        if (_CustomPhenology)
+        {
+          if (iter % (T[site].t_seedlingCycle - T[site].t_seedlingOffset) == 0)
+          {
+            trees_mature++;
+            T[site].DisperseSeed();
+          }
+        }
+        else
+        {
+          trees_mature++;
+          T[site].DisperseSeed();
+        }
       }
     }
   }

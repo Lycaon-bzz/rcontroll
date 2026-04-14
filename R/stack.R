@@ -176,7 +176,7 @@ stack <- function(name = NULL, # nolint
   stack_res <- list()
   for (i in seq_along(batches)) {
     j <- NULL
-    cl <- makeCluster(cores, outfile = "")
+    cl <- makeCluster(cores, outfile = "stack_error.log")
     registerDoSNOW(cl)
     stack_res_batch <- foreach(
       j = seq_along(batches[[i]]),
