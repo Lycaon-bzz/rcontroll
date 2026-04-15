@@ -6522,7 +6522,7 @@ void UpdateSeeds()
       {
         if (_CustomPhenology)
         {
-          if (iter % (T[site].t_seedlingCycle - T[site].t_seedlingOffset) == 0)
+          if (iter % T[site].t_seedlingCycle == T[site].t_seedlingOffset)
           {
             trees_mature++;
             T[site].DisperseSeed();
