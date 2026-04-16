@@ -4244,7 +4244,7 @@ void trollCpp(
   if (_MinLAImax == 1)
     Rcout << "Activated Module: MinLAImax" << endl;
   if (_MaxLAImax == 1)
-    Rcout << "Activated Module: MaxLAImax ADXACSYBZJHBZJHEBKHE3BJHCBEJBCEJ" << endl;
+    Rcout << "Activated Module: MaxLAImax" << endl;
   if (_CustomPhenology == 1)
     Rcout << "Activated Module: CustomPhenology" << endl;
 
