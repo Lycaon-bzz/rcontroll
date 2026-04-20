@@ -4708,6 +4708,10 @@ void AssignValueGlobal(string parameter_name, string parameter_value)
   {
     SetParameter(parameter_name, parameter_value, _MaxLAImax, bool(0), bool(1), bool(0), quiet);
   }
+  else if (parameter_name == "_CustomPhenology")
+  {
+    SetParameter(parameter_name, parameter_value, _MaxLAImax, bool(0), bool(1), bool(0), quiet);
+  }
 
   // !!!: TODO, implement NDD parameters
   // if (_NDD) {
