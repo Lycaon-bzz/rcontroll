@@ -174,7 +174,7 @@ generate_parameters <- function(cols = 200,
                                 torus = 1,
                                 MinLAImax = 1, 
                                 MaxLAImax = 1,
-                                CustomPhenology = 0,
+                                CustomPhenology = 1,
                                 MonthlySeedUpdate = 0,
                                 SeedBoosting = 0
                                 ) {
