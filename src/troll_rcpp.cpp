@@ -4833,7 +4833,78 @@ void ReadInputGeneral()
   fstream In(inputfile, ios::in);
   if (In)
   {
-    string parameter_names[68] = {"cols", "rows", "HEIGHT", "length_dcell", "nbiter", "NV", "NH", "nbout", "p_nonvert", "SWtoPPFD", "klight", "absorptance_leaves", "theta", "phi", "g1", "vC", "DBH0", "H0", "CR_min", "CR_a", "CR_b", "CD_a", "CD_b", "CD0", "shape_crown", "dens", "fallocwood", "falloccanopy", "Cseedrain", "nbs0", "sigma_height", "sigma_CR", "sigma_CD", "sigma_P", "sigma_N", "sigma_LMA", "sigma_wsg", "sigma_dbhmax", "corr_CR_height", "corr_N_P", "corr_N_LMA", "corr_P_LMA", "leafdem_resolution", "p_tfsecondary", "hurt_decay", "crown_gap_fraction", "m", "m1", "Cair", "_LL_parameterization", "_LA_regulation", "_sapwood", "_seedsadditional", "_NONRANDOM", "Rseed", "_GPPcrown", "_BASICTREEFALL", "_SEEDTRADEOFF", "_NDD", "_CROWN_MM", "_OUTPUT_extended", "extent_visual", "_fecundity", "_Rrecruit", "_distdisperse", "_torus", "_MinLAImax", "_MaxLAImax"};
+    string parameter_names[71] = {
+        "cols",
+        "rows",
+        "HEIGHT",
+        "length_dcell",
+        "nbiter",
+        "NV",
+        "NH",
+        "nbout",
+        "p_nonvert",
+        "SWtoPPFD",
+        "klight",
+        "absorptance_leaves",
+        "theta",
+        "phi",
+        "g1",
+        "vC",
+        "DBH0",
+        "H0",
+        "CR_min",
+        "CR_a",
+        "CR_b",
+        "CD_a",
+        "CD_b",
+        "CD0",
+        "shape_crown",
+        "dens",
+        "fallocwood",
+        "falloccanopy",
+        "Cseedrain",
+        "nbs0",
+        "sigma_height",
+        "sigma_CR",
+        "sigma_CD",
+        "sigma_P",
+        "sigma_N",
+        "sigma_LMA",
+        "sigma_wsg",
+        "sigma_dbhmax",
+        "corr_CR_height",
+        "corr_N_P",
+        "corr_N_LMA",
+        "corr_P_LMA",
+        "leafdem_resolution",
+        "p_tfsecondary",
+        "hurt_decay",
+        "crown_gap_fraction",
+        "m",
+        "m1",
+        "Cair",
+        "_LL_parameterization",
+        "_LA_regulation",
+        "_sapwood",
+        "_seedsadditional",
+        "_NONRANDOM",
+        "Rseed",
+        "_GPPcrown",
+        "_BASICTREEFALL",
+        "_SEEDTRADEOFF",
+        "_NDD",
+        "_CROWN_MM",
+        "_OUTPUT_extended",
+        "extent_visual",
+        "_fecundity",
+        "_Rrecruit",
+        "_distdisperse",
+        "_torus",
+        "_MinLAImax",
+        "_MaxLAImax",
+        "_CustomPhenology",
+        "_MonthlySeedUpdate",
+        "_SeedBoosting"};
     int nb_parameters = 68;
     vector<string> parameter_values(nb_parameters, "");
 
@@ -4955,8 +5026,8 @@ void ReadInputSpecies()
     // possible parameters to initialise vector<string> parameter_names{"s_name","s_LMA","s_Nmass","s_Pmass","s_wsg","s_dbhmax","s_hmax","s_ah","s_seedmass","s_regionalfreq","s_tlp","s_drymass"};
     //        int nb_parameters = int(parameter_names.size()); only works from C++11 onwards
 
-    string parameter_names[16] = {"s_name", "s_LMA", "s_Nmass", "s_Pmass", "s_wsg", "s_dbhmax", "s_hmax", "s_ah", "s_seedmass", "s_regionalfreq", "s_tlp", "s_drymass", "s_seedlingCycle", "s_randomCycle"
-                                                                                                                                                                                           "s_seedlingOffset",
+    string parameter_names[16] = {"s_name", "s_LMA", "s_Nmass", "s_Pmass", "s_wsg", "s_dbhmax", "s_hmax", "s_ah", "s_seedmass", "s_regionalfreq", "s_tlp", "s_drymass", "s_seedlingCycle", "s_randomCycle",
+                                  "s_seedlingOffset",
                                   "s_randomOffset"};
     int nb_parameters = 16;
 #ifdef Audrey
