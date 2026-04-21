@@ -3302,7 +3302,7 @@ void Tree::DisperseSeed()
 {
   if (t_dbh >= t_dbhmature)
   {
-    Rcout << "Reproduction de" << S[t_sp_lab].s_name << "à" << iter << endl;
+    Rcout << "Reproduction de " << S[t_sp_lab].s_name << " à " << iter << endl;
     if (t_site == 15)
       Rcout << "la masse des graines de l'arbre " << S[t_sp_lab].s_seedmass << endl; // test dev Audrey
     int nbs;
@@ -6601,6 +6601,7 @@ void UpdateSeeds()
           {
             trees_mature++;
             T[site].DisperseSeed();
+            Rcout << "Dispersion de sp " << T[site].t_sp_lab << " cycle :" << T[site].t_seedlingCycle << " Offset :" << T[site].t_seedlingOffset << " à " << iter << endl;
           }
         }
         else
