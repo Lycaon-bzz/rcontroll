@@ -4710,7 +4710,7 @@ void AssignValueGlobal(string parameter_name, string parameter_value)
   }
   else if (parameter_name == "_CustomPhenology")
   {
-    SetParameter(parameter_name, parameter_value, _MaxLAImax, bool(0), bool(1), bool(0), quiet);
+    SetParameter(parameter_name, parameter_value, _CustomPhenology, bool(0), bool(1), bool(1), quiet);
   }
 
   // !!!: TODO, implement NDD parameters
@@ -4909,7 +4909,7 @@ void ReadInputGeneral()
         "_CustomPhenology",
         "_MonthlySeedUpdate",
         "_SeedBoosting"};
-    int nb_parameters = 68;
+    int nb_parameters = 71;
     vector<string> parameter_values(nb_parameters, "");
 
     Rcout << endl
