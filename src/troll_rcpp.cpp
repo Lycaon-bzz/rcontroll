@@ -5028,7 +5028,7 @@ void ReadInputGeneral()
 void ReadInputSpecies()
 {
   Rcout << endl
-        << "Reading in file: " << inputfile_species << endl;
+        << "Reading in file: " << inputfile_species << "(test)" << endl;
   fstream InSpecies(inputfile_species, ios::in);
   if (InSpecies)
   {
