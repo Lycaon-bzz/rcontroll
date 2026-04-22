@@ -4799,7 +4799,7 @@ void AssignValueSpecies(Species &S, string parameter_name, string parameter_valu
     }
     else if (parameter_name == "s_randomOffset")
     {
-      Rcout << " cycle rand = " << S.s_randomOffset << " pour l'espèce " << S.s_name << endl;
+      Rcout << " off rand = " << S.s_randomOffset << " pour l'espèce " << S.s_name << endl;
       SetParameter(parameter_name, parameter_value, S.s_randomOffset, 0, 1, 0, quiet);
     }
   }
