@@ -4727,8 +4727,6 @@ void AssignValueSpecies(Species &S, string parameter_name, string parameter_valu
   //! we set parameters to values that have been read, or to their defaults, if outside of range or not the right type
   bool quiet = 1; // only applies to successful initialization, warnings are always given
 
-  cout << "Assign les valeurs" << endl;
-
   if (parameter_name == "s_name")
   {
     SetParameter(parameter_name, parameter_value, S.s_name, "indet_indet", quiet);
@@ -5046,7 +5044,7 @@ void ReadInputSpecies()
       int nb_parameters = 11;
     }
 #endif
-    cout << "création du tableau" << endl;
+
     // first get parameter names
     string line;
     getline(InSpecies, line);
@@ -5104,10 +5102,8 @@ void ReadInputSpecies()
       }
       Species species_new;
       // now we assign values
-      Rcout << "now we assign values " << endl;
       for (int i = 0; i < nb_parameters; i++)
       {
-        Rcout << "Values will be assigned for new species" << endl;
         AssignValueSpecies(species_new, parameter_names[i], parameter_values[i]);
       }
       S.push_back(species_new);
