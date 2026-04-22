@@ -4784,10 +4784,12 @@ void AssignValueSpecies(Species &S, string parameter_name, string parameter_valu
     if (parameter_name == "s_seedlingCycle")
     {
       SetParameter(parameter_name, parameter_value, S.s_seedlingCycle, 1, 1000, 1, quiet);
+      cout << "Le cyle est de " << S.s_seedlingCycle << " pour " << S.s_name << endl;
     }
     else if (parameter_name == "s_seedlingOffset")
     {
       SetParameter(parameter_name, parameter_value, S.s_seedlingOffset, 1, 10000, 1, quiet);
+      cout << "L'offset est de " << S.s_seedlingOffset << " pour " << S.s_name << endl;
     }
     else if (parameter_name == "s_randomCycle")
     {
