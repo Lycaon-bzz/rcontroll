@@ -5106,6 +5106,7 @@ void ReadInputSpecies()
       // now we assign values
       for (int i = 0; i < nb_parameters; i++)
       {
+        cout << "Values will be assigned for new species" << endl;
         AssignValueSpecies(species_new, parameter_names[i], parameter_values[i]);
       }
       S.push_back(species_new);
