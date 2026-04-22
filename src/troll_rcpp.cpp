@@ -4783,16 +4783,16 @@ void AssignValueSpecies(Species &S, string parameter_name, string parameter_valu
   }
   else if (_CustomPhenology)
   {
-    cout << "Paramétrage de Custom Phenology" << endl;
+    Rcout << "Paramétrage de Custom Phenology" << endl;
     if (parameter_name == "s_seedlingCycle")
     {
       SetParameter(parameter_name, parameter_value, S.s_seedlingCycle, 1, 1000, 1, quiet);
-      cout << "Le cyle est de " << S.s_seedlingCycle << " pour " << S.s_name << endl;
+      Rcout << "Le cyle est de " << S.s_seedlingCycle << " pour " << S.s_name << endl;
     }
     else if (parameter_name == "s_seedlingOffset")
     {
       SetParameter(parameter_name, parameter_value, S.s_seedlingOffset, 1, 10000, 1, quiet);
-      cout << "L'offset est de " << S.s_seedlingOffset << " pour " << S.s_name << endl;
+      Rcout << "L'offset est de " << S.s_seedlingOffset << " pour " << S.s_name << endl;
     }
     else if (parameter_name == "s_randomCycle")
     {
@@ -5034,7 +5034,7 @@ void ReadInputSpecies()
   {
     // possible parameters to initialise vector<string> parameter_names{"s_name","s_LMA","s_Nmass","s_Pmass","s_wsg","s_dbhmax","s_hmax","s_ah","s_seedmass","s_regionalfreq","s_tlp","s_drymass"};
     //        int nb_parameters = int(parameter_names.size()); only works from C++11 onwards
-    cout << "génération des paramètres" << endl;
+    Rcout << "génération des paramètres" << endl;
     string parameter_names[16] = {"s_name", "s_LMA", "s_Nmass", "s_Pmass", "s_wsg", "s_dbhmax", "s_hmax", "s_ah", "s_seedmass", "s_regionalfreq", "s_tlp", "s_drymass", "s_seedlingCycle", "s_randomCycle",
                                   "s_seedlingOffset",
                                   "s_randomOffset"};
@@ -5104,10 +5104,10 @@ void ReadInputSpecies()
       }
       Species species_new;
       // now we assign values
-      cout << "now we assign values " << endl;
+      Rcout << "now we assign values " << endl;
       for (int i = 0; i < nb_parameters; i++)
       {
-        cout << "Values will be assigned for new species" << endl;
+        Rcout << "Values will be assigned for new species" << endl;
         AssignValueSpecies(species_new, parameter_names[i], parameter_values[i]);
       }
       S.push_back(species_new);
