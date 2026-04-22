@@ -5034,7 +5034,7 @@ void ReadInputSpecies()
   {
     // possible parameters to initialise vector<string> parameter_names{"s_name","s_LMA","s_Nmass","s_Pmass","s_wsg","s_dbhmax","s_hmax","s_ah","s_seedmass","s_regionalfreq","s_tlp","s_drymass"};
     //        int nb_parameters = int(parameter_names.size()); only works from C++11 onwards
-
+    cout << "génération des paramètres" << endl;
     string parameter_names[16] = {"s_name", "s_LMA", "s_Nmass", "s_Pmass", "s_wsg", "s_dbhmax", "s_hmax", "s_ah", "s_seedmass", "s_regionalfreq", "s_tlp", "s_drymass", "s_seedlingCycle", "s_randomCycle",
                                   "s_seedlingOffset",
                                   "s_randomOffset"};
@@ -5046,7 +5046,7 @@ void ReadInputSpecies()
       int nb_parameters = 11;
     }
 #endif
-
+    cout << "création du tableau" << endl;
     // first get parameter names
     string line;
     getline(InSpecies, line);
@@ -5104,6 +5104,7 @@ void ReadInputSpecies()
       }
       Species species_new;
       // now we assign values
+      cout << "now we assign values " << endl;
       for (int i = 0; i < nb_parameters; i++)
       {
         cout << "Values will be assigned for new species" << endl;
@@ -7823,6 +7824,7 @@ void GenerateVoxelreturnsALS(vector<int> &beams, vector<float> &beams_returns, f
 // or with <bit> library, cf. https://en.cppreference.com/w/cpp/types/endian, but: C++20
 // #include <bit>
 // #include <iostream>
+
 //
 // int main() {
 //
