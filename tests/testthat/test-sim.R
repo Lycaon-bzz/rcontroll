@@ -5,8 +5,8 @@ test_that("sim", {
   sim <- troll(
     name = "test",
     global = generate_parameters(
-      rows = 100, cols = 100,
-      iterperyear = 12, nbiter = 4
+      rows = 50, cols = 50, torus = 0,
+      iterperyear = 12, nbiter = 4, CustomPhenology = 0
     ),
     species = TROLLv3_species,
     climate = TROLLv3_climatedaytime12,

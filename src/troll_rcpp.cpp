@@ -3302,7 +3302,7 @@ void Tree::DisperseSeed()
 {
   if (t_dbh >= t_dbhmature)
   {
-    Rcout << "Reproduction de" << S[t_sp_lab].s_name << "à" << iter << endl;
+    Rcout << "Reproduction de " << S[t_sp_lab].s_name << " à " << iter << endl;
     if (t_site == 15)
       Rcout << "la masse des graines de l'arbre " << S[t_sp_lab].s_seedmass << endl; // test dev Audrey
     int nbs;
@@ -4710,7 +4710,7 @@ void AssignValueGlobal(string parameter_name, string parameter_value)
   }
   else if (parameter_name == "_CustomPhenology")
   {
-    SetParameter(parameter_name, parameter_value, _MaxLAImax, bool(0), bool(1), bool(0), quiet);
+    SetParameter(parameter_name, parameter_value, _CustomPhenology, bool(0), bool(1), bool(1), quiet);
   }
 
   // !!!: TODO, implement NDD parameters
@@ -4784,10 +4784,12 @@ void AssignValueSpecies(Species &S, string parameter_name, string parameter_valu
     if (parameter_name == "s_seedlingCycle")
     {
       SetParameter(parameter_name, parameter_value, S.s_seedlingCycle, 1, 1000, 1, quiet);
+      cout << "Le cyle est de " << S.s_seedlingCycle << " pour " << S.s_name << endl;
     }
     else if (parameter_name == "s_seedlingOffset")
     {
       SetParameter(parameter_name, parameter_value, S.s_seedlingOffset, 1, 10000, 1, quiet);
+      cout << "L'offset est de " << S.s_seedlingOffset << " pour " << S.s_name << endl;
     }
     else if (parameter_name == "s_randomCycle")
     {
@@ -4909,7 +4911,7 @@ void ReadInputGeneral()
         "_CustomPhenology",
         "_MonthlySeedUpdate",
         "_SeedBoosting"};
-    int nb_parameters = 68;
+    int nb_parameters = 71;
     vector<string> parameter_values(nb_parameters, "");
 
     Rcout << endl
@@ -6601,6 +6603,7 @@ void UpdateSeeds()
           {
             trees_mature++;
             T[site].DisperseSeed();
+            Rcout << "Dispersion de sp " << T[site].t_sp_lab << " cycle :" << T[site].t_seedlingCycle << " Offset :" << T[site].t_seedlingOffset << " à " << iter << endl;
           }
         }
         else
