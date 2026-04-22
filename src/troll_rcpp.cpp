@@ -4727,6 +4727,8 @@ void AssignValueSpecies(Species &S, string parameter_name, string parameter_valu
   //! we set parameters to values that have been read, or to their defaults, if outside of range or not the right type
   bool quiet = 1; // only applies to successful initialization, warnings are always given
 
+  cout << "Assign les valeurs" << endl;
+
   if (parameter_name == "s_name")
   {
     SetParameter(parameter_name, parameter_value, S.s_name, "indet_indet", quiet);
@@ -4781,6 +4783,7 @@ void AssignValueSpecies(Species &S, string parameter_name, string parameter_valu
   }
   else if (_CustomPhenology)
   {
+    cout << "Paramétrage de Custom Phenology" << endl;
     if (parameter_name == "s_seedlingCycle")
     {
       SetParameter(parameter_name, parameter_value, S.s_seedlingCycle, 1, 1000, 1, quiet);
