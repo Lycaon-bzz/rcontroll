@@ -5037,10 +5037,10 @@ void ReadInputSpecies()
     // possible parameters to initialise vector<string> parameter_names{"s_name","s_LMA","s_Nmass","s_Pmass","s_wsg","s_dbhmax","s_hmax","s_ah","s_seedmass","s_regionalfreq","s_tlp","s_drymass"};
     //        int nb_parameters = int(parameter_names.size()); only works from C++11 onwards
     Rcout << "génération des paramètres" << endl;
-    string parameter_names[16] = {"s_name", "s_LMA", "s_Nmass", "s_Pmass", "s_wsg", "s_dbhmax", "s_hmax", "s_ah", "s_seedmass", "s_regionalfreq", "s_DispSynd", "s_tlp", "s_drymass", "s_seedlingCycle", "s_randomCycle",
+    string parameter_names[17] = {"s_name", "s_LMA", "s_Nmass", "s_Pmass", "s_wsg", "s_dbhmax", "s_hmax", "s_ah", "s_seedmass", "s_regionalfreq", "s_DispSynd", "s_tlp", "s_drymass", "s_seedlingCycle", "s_randomCycle",
                                   "s_seedlingOffset",
                                   "s_randomOffset"};
-    int nb_parameters = 16;
+    int nb_parameters = 17;
 #ifdef Audrey
     if (_distdisperse)
     {
