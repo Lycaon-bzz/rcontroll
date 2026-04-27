@@ -6,7 +6,7 @@ test_that("sim", {
     name = "test",
     global = generate_parameters(
       rows = 50, cols = 50, torus = 0,
-      iterperyear = 12, nbiter = 4, CustomPhenology = 0
+      iterperyear = 12, nbiter = 4, CustomPhenology = 1
     ),
     species = TROLLv3_species,
     climate = TROLLv3_climatedaytime12,
