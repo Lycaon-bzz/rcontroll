@@ -1000,30 +1000,6 @@ vector<Tree> T; //!< Definition of a vector of the Tree class
 //! reformulation of birth process: light environment is checked within birth function, based on precomputed array of LAImax
 void Tree::Birth(int nume, int site0)
 {
-  // #############################
-  // # Seedling Custom Phenology #
-  // #############################
-  if (_CustomPhenology)
-  {
-    if (S[nume].s_randomOffset == 1)
-    {
-      Rcout << "Activation Random Offset pour l'espèce " << S[nume].s_name << endl;
-      t_seedlingOffset = gsl_rng_uniform_int(gslrng, S[nume].s_seedlingCycle);
-    }
-    else
-    {
-      t_seedlingOffset = S[nume].s_seedlingOffset;
-    }
-    if (S[nume].s_randomCycle == 1)
-    {
-      Rcout << "Activation Random Cycle pour l'espèce " << S[nume].s_name << endl;
-      t_seedlingCycle = gsl_ran_gaussian(gslrng, S[nume].s_seedlingCycle);
-    }
-    else
-    {
-      t_seedlingCycle = S[nume].s_seedlingCycle;
-    }
-  }
 
   // ######################
   // # first test LAImax ##
@@ -1042,6 +1018,31 @@ void Tree::Birth(int nume, int site0)
     t_age = 1.0;
     t_hurt = 0;
     t_NPPneg = 0;
+
+    // #############################
+    // # Seedling Custom Phenology #
+    // #############################
+    if (_CustomPhenology)
+    {
+      if (S[t_sp_lab].s_randomOffset == 1)
+      {
+        Rcout << "Activation Random Offset pour l'espèce " << S[t_sp_lab].s_name << endl;
+        t_seedlingOffset = gsl_rng_uniform_int(gslrng, S[t_sp_lab].s_seedlingCycle);
+      }
+      else
+      {
+        t_seedlingOffset = S[t_sp_lab].s_seedlingOffset;
+      }
+      if (S[t_sp_lab].s_randomCycle == 1)
+      {
+        Rcout << "Activation Random Cycle pour l'espèce " << S[t_sp_lab].s_name << endl;
+        t_seedlingCycle = gsl_ran_gaussian(gslrng, S[t_sp_lab].s_seedlingCycle);
+      }
+      else
+      {
+        t_seedlingCycle = S[t_sp_lab].s_seedlingCycle;
+      }
+    }
 
     // ######################
     // # intraspecific var ##
