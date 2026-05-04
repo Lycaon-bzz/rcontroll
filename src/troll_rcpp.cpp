@@ -1026,7 +1026,7 @@ void Tree::Birth(int nume, int site0)
     {
       if (S[t_sp_lab].s_randomOffset == 1)
       {
-        Rcout << "Activation Random Offset pour l'espèce " << S[t_sp_lab].s_name << endl;
+        // Rcout << "Activation Random Offset pour l'espèce " << S[t_sp_lab].s_name << endl;
         t_seedlingOffset = gsl_rng_uniform_int(gslrng, S[t_sp_lab].s_seedlingCycle);
       }
       else
@@ -1035,7 +1035,7 @@ void Tree::Birth(int nume, int site0)
       }
       if (S[t_sp_lab].s_randomCycle == 1)
       {
-        Rcout << "Activation Random Cycle pour l'espèce " << S[t_sp_lab].s_name << endl;
+        // Rcout << "Activation Random Cycle pour l'espèce " << S[t_sp_lab].s_name << endl;
         t_seedlingCycle = gsl_ran_gaussian(gslrng, S[t_sp_lab].s_seedlingCycle);
       }
       else
@@ -4784,26 +4784,26 @@ void AssignValueSpecies(Species &S, string parameter_name, string parameter_valu
   }
   else if (_CustomPhenology)
   {
-    Rcout << "Paramétrage de Custom Phenology" << endl;
+    // Rcout << "Paramétrage de Custom Phenology" << endl;
     if (parameter_name == "s_seedlingCycle")
     {
       SetParameter(parameter_name, parameter_value, S.s_seedlingCycle, 0, 1000, 1, quiet);
-      Rcout << "Le cyle est de " << S.s_seedlingCycle << " pour " << S.s_name << endl;
+      // Rcout << "Le cyle est de " << S.s_seedlingCycle << " pour " << S.s_name << endl;
     }
     else if (parameter_name == "s_seedlingOffset")
     {
       SetParameter(parameter_name, parameter_value, S.s_seedlingOffset, 0, 10000, 1, quiet);
-      Rcout << "L'offset est de " << S.s_seedlingOffset << " pour " << S.s_name << endl;
+      // Rcout << "L'offset est de " << S.s_seedlingOffset << " pour " << S.s_name << endl;
     }
     else if (parameter_name == "s_randomCycle")
     {
       SetParameter(parameter_name, parameter_value, S.s_randomCycle, 0, 1, 0, quiet);
-      Rcout << " cycle rand = " << S.s_randomCycle << " pour l'espèce " << S.s_name << endl;
+      // Rcout << " cycle rand = " << S.s_randomCycle << " pour l'espèce " << S.s_name << endl;
     }
     else if (parameter_name == "s_randomOffset")
     {
       SetParameter(parameter_name, parameter_value, S.s_randomOffset, 0, 1, 0, quiet);
-      Rcout << " off rand = " << S.s_randomOffset << " pour l'espèce " << S.s_name << endl;
+      // Rcout << " off rand = " << S.s_randomOffset << " pour l'espèce " << S.s_name << endl;
     }
   }
 }
@@ -6609,7 +6609,7 @@ void UpdateSeeds()
           {
             trees_mature++;
             T[site].DisperseSeed();
-            Rcout << "Dispersion de sp " << T[site].t_sp_lab << " cycle :" << T[site].t_seedlingCycle << " Offset :" << T[site].t_seedlingOffset << " à " << iter << endl;
+            // Rcout << "Dispersion de sp " << T[site].t_sp_lab << " cycle :" << T[site].t_seedlingCycle << " Offset :" << T[site].t_seedlingOffset << " à " << iter << endl;
           }
         }
         else
