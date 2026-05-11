@@ -93,13 +93,19 @@ stack <- function(name = NULL, # nolint
                   verbose = TRUE,
                   overwrite = TRUE,
                   thin = NULL) {
-  .troll_child(
-    name = name,
-    path = path,
-    global = global,
-    ...
-  )
-}
+  # cores
+  if (is.null(cores)) {
+    cores <- detectCores()
+    message("Detect cores was not defined, ", cores, " cores will be used.")
+  }
+  if ((detectCores()) < cores) {
+    cores <- detectCores()
+    warning(paste(
+      "It seems you attributed more cores than your CPU has!
+      Automatic reduction to",
+      cores, "cores."
+    ))
+  }
 
   # stack name
   if (is.null(name)) {
@@ -196,7 +202,6 @@ stack <- function(name = NULL, # nolint
     cat("\n")
   }
   close(pb)
-
 
   # loading outputs
   stack_res <- trollstack(name = name, path = path_o, mem = FALSE)
