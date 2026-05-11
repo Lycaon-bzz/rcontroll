@@ -68,27 +68,20 @@ troll <- function(name = NULL,
                   verbose = TRUE,
                   overwrite = TRUE,
                   thin = NULL) {
-  i <- NULL # nolint
-  cl <- makeCluster(1, outfile = "")
-  registerDoSNOW(cl)
-  sim <- foreach(i = 1, .export = ".troll_child") %dopar% {
-    .troll_child(
-      name = name,
-      path = path,
-      global = global,
-      species = species,
-      climate = climate,
-      daily = daily,
-      lidar = lidar,
-      forest = forest,
-      load = load,
-      verbose = verbose,
-      overwrite = overwrite,
-      thin = thin
-    )
-  }
-  stopCluster(cl)
-  return(sim[[1]])
+.troll_child(          
+    name = name,
+    path = path,
+    global = global,   
+    species = species,
+    climate = climate,
+    daily = daily,
+    lidar = lidar,
+    forest = forest,
+    load = load,
+    verbose = verbose,
+    overwrite = overwrite,
+    thin = thin
+  )
 }
 
 .troll_child <- function(name = NULL, # nolint
