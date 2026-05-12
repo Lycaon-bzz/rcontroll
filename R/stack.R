@@ -209,7 +209,7 @@ stack <- function(name = NULL, # nolint
     stack_res <- load_sim(stack_res)
   }
   if (tmp) {
-    unlink(path_o, recursive = TRUE)
+    unlink(path_o)
     stack_res@path <- character()
   }
 
