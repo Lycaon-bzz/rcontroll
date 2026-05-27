@@ -1395,6 +1395,26 @@ int Tree::BirthFromInventory(int site, vector<string> &parameter_names, vector<s
     //*## Basic functional traits ##*/
     //*#############################*/
 
+    // Custom phenology
+    if (_CustomPhenology)
+    {
+      parameter_name = "seedlingCycle";
+      parameter_value = GetParameter(parameter_name, parameter_names, parameter_values);
+      SetParameter(parameter_name, parameter_value, S[t_sp_lab].s_seedlingCycle, 0, 1000, 1, quiet);
+
+      parameter_name = "seedlingOffset";
+      parameter_value = GetParameter(parameter_name, parameter_names, parameter_values);
+      SetParameter(parameter_name, parameter_value, S[t_sp_lab].s_seedlingOffset, 0, 10000, 1, quiet);
+
+      parameter_name = "randomCycle";
+      parameter_value = GetParameter(parameter_name, parameter_names, parameter_values);
+      SetParameter(parameter_name, parameter_value, S[t_sp_lab].s_randomCycle, 0, 1, 0, quiet);
+
+      parameter_name = "randomOffset";
+      parameter_value = GetParameter(parameter_name, parameter_names, parameter_values);
+      SetParameter(parameter_name, parameter_value, S[t_sp_lab].s_randomOffset, 0, 1, 0, quiet);
+    }
+
     // !!!: in future versions, this could be condensed by creating a template
     parameter_name = "Pmass";
     parameter_value = GetParameter(parameter_name, parameter_names, parameter_values);
