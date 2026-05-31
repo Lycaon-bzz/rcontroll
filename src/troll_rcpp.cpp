@@ -1413,6 +1413,15 @@ int Tree::BirthFromInventory(int site, vector<string> &parameter_names, vector<s
       parameter_name = "randomOffset";
       parameter_value = GetParameter(parameter_name, parameter_names, parameter_values);
       SetParameter(parameter_name, parameter_value, S[t_sp_lab].s_randomOffset, 0, 1, 0, quiet);
+      if (S[t_sp_lab].s_randomOffset == 1)
+        t_seedlingOffset = gsl_rng_uniform_int(gslrng, S[t_sp_lab].s_seedlingCycle);
+      else
+        t_seedlingOffset = S[t_sp_lab].s_seedlingOffset;
+
+      if (S[t_sp_lab].s_randomCycle == 1)
+        t_seedlingCycle = gsl_ran_gaussian(gslrng, S[t_sp_lab].s_seedlingCycle);
+      else
+        t_seedlingCycle = S[t_sp_lab].s_seedlingCycle;
     }
 
     // !!!: in future versions, this could be condensed by creating a template
