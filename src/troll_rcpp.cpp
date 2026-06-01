@@ -1398,21 +1398,6 @@ int Tree::BirthFromInventory(int site, vector<string> &parameter_names, vector<s
     // Custom phenology
     if (_CustomPhenology)
     {
-      parameter_name = "seedlingCycle";
-      parameter_value = GetParameter(parameter_name, parameter_names, parameter_values);
-      SetParameter(parameter_name, parameter_value, S[t_sp_lab].s_seedlingCycle, 0, 1000, 1, quiet);
-
-      parameter_name = "seedlingOffset";
-      parameter_value = GetParameter(parameter_name, parameter_names, parameter_values);
-      SetParameter(parameter_name, parameter_value, S[t_sp_lab].s_seedlingOffset, 0, 10000, 1, quiet);
-
-      parameter_name = "randomCycle";
-      parameter_value = GetParameter(parameter_name, parameter_names, parameter_values);
-      SetParameter(parameter_name, parameter_value, S[t_sp_lab].s_randomCycle, 0, 1, 0, quiet);
-
-      parameter_name = "randomOffset";
-      parameter_value = GetParameter(parameter_name, parameter_names, parameter_values);
-      SetParameter(parameter_name, parameter_value, S[t_sp_lab].s_randomOffset, 0, 1, 0, quiet);
       if (S[t_sp_lab].s_randomOffset == 1)
         t_seedlingOffset = gsl_rng_uniform_int(gslrng, S[t_sp_lab].s_seedlingCycle);
       else
