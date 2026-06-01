@@ -6638,7 +6638,7 @@ void UpdateSeeds()
           {
             trees_mature++;
             T[site].DisperseSeed();
-            // Rcout << "Dispersion de sp " << T[site].t_sp_lab << " cycle :" << T[site].t_seedlingCycle << " Offset :" << T[site].t_seedlingOffset << " à " << iter << endl;
+            Rcout << "Dispersion de sp " << T[site].t_sp_lab << " cycle :" << T[site].t_seedlingCycle << " Offset :" << T[site].t_seedlingOffset << " à " << iter << endl;
           }
         }
         else
