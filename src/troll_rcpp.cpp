@@ -6647,7 +6647,7 @@ void UpdateSeeds()
       nbspecies_affected++;
     seedsadded_effective += seedsadded_species;
   }
-  Rcout << "Trees_mature: " << trees_mature << " Nbseedsadded: " << seedsadded << " effective: " << seedsadded_effective << " nbspeciesaffected: " << nbspecies_affected << endl;
+  // Rcout << "Trees_mature: " << trees_mature << " Nbseedsadded: " << seedsadded << " effective: " << seedsadded_effective << " nbspeciesaffected: " << nbspecies_affected << endl;
 }
 
 // #################################
