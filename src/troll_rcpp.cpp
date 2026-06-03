@@ -6244,6 +6244,20 @@ void ReadInputInventory()
       {
         Rcout << "WARNING! Inventory file was empty. No trees were initialised." << endl;
       }
+      // compute LAID for RecruitTree function
+      for (int h = 0; h < (HEIGHT + 1); h++)
+        for (int sbsite = 0; sbsite < sites + 2 * SBORD; sbsite++)
+          LAI3D[h][sbsite] = 0.0;
+      for (int site = 0; site < sites; site++)
+        T[site].CalcLAI(); // Each tree contribues to LAI3D
+      for (int h = HEIGHT; h > 0; h--)
+      { // LAI is computed by summing LAI from the canopy top to the ground
+        for (int site = 0; site < sites; site++)
+        {
+          int sbsite = site + SBORD;
+          LAI3D[h - 1][sbsite] += LAI3D[h][sbsite];
+        }
+      }
     }
   }
   else
